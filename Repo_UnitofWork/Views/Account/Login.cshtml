@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+
+<!-- Hiển thị thông báo lỗi nếu có -->
+@if (TempData["Error"] != null)
+{
+    <div style="color: red; font-weight: bold;">
+        @TempData["Error"]
+    </div>
+}
+
+<!-- Hiển thị thông báo thành công nếu có -->
+@if (TempData["Message"] != null)
+{
+    <div style="color: green; font-weight: bold;">
+        @TempData["Message"]
+    </div>
+}
+
+<p>Click below to login using Google:</p>
+<a href="/Account/LoginWithGoogle" class="btn btn-primary">Login with Google</a>
+

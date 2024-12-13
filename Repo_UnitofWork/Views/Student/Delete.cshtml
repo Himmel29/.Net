@@ -1,0 +1,13 @@
+﻿@model Repo_UnitofWork.Models.Student
+
+<h2>Delete Student</h2>
+
+<p>Are you sure you want to delete this student?</p>
+<p>
+    <strong>@Model.Name</strong> (@Model.Age)(@Model.Address)
+</p>
+
+<form method="post">
+    <button type="submit">Yes, Delete</button>
+    <a href="/Student/Index">Cancel</a>
+</form>

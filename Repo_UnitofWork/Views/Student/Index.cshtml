@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Repo_UnitofWork.Models.Student>
+
+@{
+    ViewData["Title"] = "Student List";
+}
+
+<h2>Student List</h2>
+
+<a href="@Url.Action("Create", "Student")">Add New Student</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Age</td>
+                <td>@student.Address</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Student", new { id = student.Id })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Student", new { id = student.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
